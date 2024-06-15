@@ -1,3 +1,64 @@
+@font-face {
+    font-family: 'IFDurerDisplay';
+    src: url('../fonts/IFDurerDisplay.ttf');
+}
+
 body {
+    font-family: 'IFDurerDisplay';
     background-color: black;
+    color: white;
+}
+
+/* navbar */
+#navbar_wrapper {
+    /* background: darkred; */
+    display: flex;
+    height: 40px;
+    position: relative;
+}
+
+#navbar_wrapper #navbar_brand a {
+    position: absolute;
+    left: 30px;
+    transform: translateY(-50%);
+    top: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#nav_links_wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    width: auto;
+    height: 40px;
+    /* background: darkgreen; */
+}
+
+#nav_links_wrapper ul {
+    display: flex;
+}
+
+#nav_links_wrapper li {
+    list-style: none;
+    /* background: darkblue; */
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+
+#nav_links_wrapper .nav_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav_links_wrapper .dot_icon {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
 }
