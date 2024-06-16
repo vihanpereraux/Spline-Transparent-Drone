@@ -2,6 +2,7 @@
 const bars = document.getElementsByClassName('volume_bar');
 const volumeBarWrapper = document.getElementById('volume_bar_wrapper');
 const mutedLabel = document.getElementById('muted_label');
+const backgroundScore = document.getElementById('background_score');
 
 const highestValue = 20;
 const lowestValue = 7;
@@ -12,6 +13,9 @@ var isMuteButtonClicked = true;
 
 volumeBarWrapper.addEventListener('click', () => {
     if (isMuteButtonClicked) {
+        backgroundScore.play();
+        backgroundScore.volume = .35;
+        
         mutedLabel.innerText = '[UM] The Chicago Night';
         isMuteButtonClicked = false;
 
@@ -25,6 +29,8 @@ volumeBarWrapper.addEventListener('click', () => {
         }
     }
     else {
+        backgroundScore.pause();
+
         clearInterval(barAnimationInterval);
         isMuteButtonClicked = true;
         mutedLabel.innerText = '[M] The Chicago Night';
@@ -34,8 +40,6 @@ volumeBarWrapper.addEventListener('click', () => {
         }
     }
 });
-
-
 
 
 

@@ -56,15 +56,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: darkblue;
+    /* background-color: darkblue; */
 }
 
 #nav_links_wrapper .dot_icon {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     background-color: white;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 6px;
+    margin-top: 2px;
 }
 
 /* footer */
