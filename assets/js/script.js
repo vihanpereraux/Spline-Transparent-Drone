@@ -1,6 +1,11 @@
 import baffle from 'baffle';
 import { Application } from '@splinetool/runtime';
 
+// spline canvas
+const canvas = document.getElementById('canvas3d');
+const app = new Application(canvas);
+app.load('https://prod.spline.design/hDCubbyljWlwEQFh/scene.splinecode');
+
 // music animation
 const bars = document.getElementsByClassName('volume_bar');
 const volumeBarWrapper = document.getElementById('volume_bar_wrapper');
@@ -45,9 +50,9 @@ volumeBarWrapper.addEventListener('click', () => {
 });
 
 
-// revealing effect
+// revealing effect and hover effect
+// scroll text
 const scrollText = document.getElementById('scroll_text');
-// animations
 let text = baffle(scrollText, {
     characters: 'scroll_down',
     speed: 200
@@ -59,11 +64,94 @@ setInterval(() => {
     text.reveal();
 }, 4000);
 
+const navItem = document.getElementsByClassName('route_name');
+const timeoutDuration = 600;
+const routeNames = ["services", "shop now", "category", "account"]
 
+for (let index = 0; index < navItem.length; index++) {
+    navItem[index].addEventListener('mouseover', () => {
+        try {
+            switch (index + 1) {
+                case 1:
+                    animateTextObject(
+                        navItem[index],
+                        routeNames[index],
+                        timeoutDuration);
+                    break;
 
-const canvas = document.getElementById('canvas3d');
-const app = new Application(canvas);
-app.load('https://prod.spline.design/hDCubbyljWlwEQFh/scene.splinecode');
+                case 2:
+                    animateTextObject(
+                        navItem[index],
+                        routeNames[index],
+                        timeoutDuration);
+                    break;
 
+                case 3:
+                    animateTextObject(
+                        navItem[index],
+                        routeNames[index],
+                        timeoutDuration);
+                    break;
+
+                case 4:
+                    animateTextObject(
+                        navItem[index],
+                        routeNames[index],
+                        timeoutDuration);
+                    break;
+                default:
+                    break;
+            }
+        } catch (error) {
+            console.log("Some error has occured - " + error);
+        }
+
+    });
+
+    navItem[index].addEventListener('mouseout', () => {
+        try {
+            switch (index + 1) {
+                case 1:
+                    resetShuffleText(navItem[index], routeNames[index]);
+                    break;
+
+                case 2:
+                    resetShuffleText(navItem[index], routeNames[index]);
+                    break;
+
+                case 3:
+                    resetShuffleText(navItem[index], routeNames[index]);
+                    break;
+
+                case 4:
+                    resetShuffleText(navItem[index], routeNames[index]);
+                    break;
+
+                default:
+                    break;
+            }
+        } catch (error) {
+
+        }
+    })
+}
+
+function animateTextObject(textObject, routeName, timeoutDuration) {
+    try {
+        let hoverTextObj = baffle(textObject, {
+            characters: routeName,
+            speed: 200
+        }).start();
+        setTimeout(() => {
+            hoverTextObj.reveal();
+        }, timeoutDuration);
+    } catch (error) {
+        console.log("Some error occured in the baffle library - " + error);
+    }
+}
+
+function resetShuffleText(textObject, routeName) {
+    textObject.innerText = routeName;
+}
 
 
