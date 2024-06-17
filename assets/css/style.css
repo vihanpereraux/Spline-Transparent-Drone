@@ -10,6 +10,28 @@ body {
     overflow: hidden !important;
 }
 
+/* loader */
+#loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: none;
+    z-index: 10;
+}
+
+.row {
+    display: flex;
+}
+
+.block {
+    width: 10vw;
+    height: 10vh;
+    background: rgb(255, 255, 255);
+    transition: all .4s ease-in-out;
+}
+
 /* navbar */
 #navbar_wrapper {
     /* background: darkred; */
@@ -57,7 +79,8 @@ body {
     align-items: center;
     justify-content: center;
     /* background-color: darkblue; */
-    width: 110px;
+    width: 118px;
+    cursor: pointer;
 }
 
 #nav_links_wrapper .dot_icon {
