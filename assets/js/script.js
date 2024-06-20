@@ -1,12 +1,33 @@
 import baffle from 'baffle';
 import { Application } from '@splinetool/runtime';
+import { triggerAnimation } from './loader';
+
+const navbarWrapper = document.getElementById('navbar_wrapper');
+const verticalLines = document.getElementById('vertical_lines');
+const crossPointers = document.getElementById('cross_pointers');
+const footerWrapper = document.getElementById('footer_wrapper');
+
+// components
+import { MyNavbar } from '../../components/navbar';
+import { VerticalLines } from '../../components/vertical-lines';
+import { CrossPointers } from '../../components/cross-pointers';
+import { Footer } from '../../components/footer';
+
+
+// HTML injections
+navbarWrapper.innerHTML = MyNavbar();
+verticalLines.innerHTML = VerticalLines();
+crossPointers.innerHTML = CrossPointers();
+footerWrapper.innerHTML = Footer();
 
 // spline canvas
 const canvas = document.getElementById('canvas3d');
 const app = new Application(canvas);
-app.load('https://prod.spline.design/hDCubbyljWlwEQFh/scene.splinecode').finally(() => {
-    console.log("laoded");
-});
+app.load('https://prod.spline.design/hDCubbyljWlwEQFh/scene.splinecode');
+window.onload = () => {
+    triggerAnimation();
+}
+
 
 // music animation
 const bars = document.getElementsByClassName('volume_bar');
@@ -51,13 +72,6 @@ volumeBarWrapper.addEventListener('click', () => {
     }
 });
 
-
-// side pointer animation 
-// const rootElement = document.querySelector(':root');
-// const computedStyles = getComputedStyle(rootElement);
-// computedStyles.setProperty('--pointer-one-top-value',
-//     Math.floor(Math.random() * (35 - 25) + 25));
-// console.log(computedStyles.getPropertyValue('--pointer-one-top-value'))
 
 // revealing effect and hover effect
 // scroll text
@@ -145,7 +159,8 @@ for (let index = 0; index < navItem.length; index++) {
     })
 }
 
-// text animation
+
+// text shuffle animation
 function animateTextObject(textObject, routeName, timeoutDuration) {
     try {
         let hoverTextObj = baffle(textObject, {

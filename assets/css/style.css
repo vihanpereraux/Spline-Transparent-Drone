@@ -28,7 +28,7 @@ body {
 .block {
     width: 10vw;
     height: 10vh;
-    background: rgb(255, 255, 255);
+    background: white;
     transition: all .4s ease-in-out;
 }
 

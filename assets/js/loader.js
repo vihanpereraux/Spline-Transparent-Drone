@@ -146,7 +146,6 @@ function dissapearGrid1() {
 function dissapearGrid2() {
   for (let index = 0; index < 20; index++) {
     const range = Math.floor(Math.random() * (40 - 20) + 20);
-    // console.log((40 - index) + range);
     allGrids[range].style.opacity = 0;
   }
   setTimeout(() => {
@@ -162,7 +161,6 @@ function dissapearGrid2() {
 function dissapearGrid3() {
   for (let index = 0; index < 20; index++) {
     const range = Math.floor(Math.random() * (60 - 40) + 40);
-    // console.log((60 - index) + range);
     allGrids[range].style.opacity = 0;
   }
 }
@@ -170,7 +168,6 @@ function dissapearGrid3() {
 function dissapearGrid4() {
   for (let index = 0; index < 20; index++) {
     const range = Math.floor(Math.random() * (80 - 60) + 60);
-    // console.log((80 - index) + range);
     allGrids[range].style.opacity = 0;
   }
 }
@@ -178,13 +175,14 @@ function dissapearGrid4() {
 function dissapearGrid5() {
   for (let index = 0; index < 20; index++) {
     const range = Math.floor(Math.random() * (100 - 80) + 80);
-    // console.log(range);
     allGrids[range].style.opacity = 0;
   }
 }
 
-const gridRemoveTimeout1 = setTimeout(dissapearGrid1, 1000);
-const gridRemoveTimeout2 = setTimeout(dissapearGrid2, 2600);
-const gridRemoveTimeout3 = setTimeout(dissapearGrid3, 1400);
-const gridRemoveTimeout4 = setTimeout(dissapearGrid4, 1800);
-const gridRemoveTimeout5 = setTimeout(dissapearGrid5, 2200);
+export function triggerAnimation() {
+  const gridRemoveTimeout1 = setTimeout(dissapearGrid1, 1000);
+  const gridRemoveTimeout2 = setTimeout(dissapearGrid2, 2600);
+  const gridRemoveTimeout3 = setTimeout(dissapearGrid3, 1400);
+  const gridRemoveTimeout4 = setTimeout(dissapearGrid4, 1800);
+  const gridRemoveTimeout5 = setTimeout(dissapearGrid5, 2200);
+}
