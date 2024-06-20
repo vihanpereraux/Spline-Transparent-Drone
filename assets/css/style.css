@@ -100,6 +100,138 @@ body {
     z-index: -1;
 }
 
+/* vertical lines */
+#vertical_lines .line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 1px;
+    background-color: white;
+    opacity: 0.15;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+#vertical_lines .line_01 {
+    left: 33%;
+}
+
+#vertical_lines .line_02 {
+    left: 50%;
+}
+
+#vertical_lines .line_03 {
+    left: 67%;
+}
+
+/* cross pointers */
+.cross_pointer {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: .45;
+}
+.cross_pointer:nth-child(1) {
+    left: 10%;
+    top: 18%;
+}
+
+.cross_pointer:nth-child(2) {
+    right: 10%;
+    bottom: 25%;
+}
+
+.plus_pointer_v {
+    background-color: white;
+    width: 1px;
+    height: 12px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;    
+}
+
+.plus_pointer_h {
+    background-color: white;
+    width: 12px;
+    height: 1px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;    
+}
+
+.corner_left_up_1 {
+    background-color: white;
+    width: 1px;
+    height: 12px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.corner_left_up_2 {
+    background-color: white;
+    width: 12px;
+    height: 1px;
+    position: absolute;
+}
+
+.corner_right_up_1 {
+    background-color: white;
+    width: 1px;
+    height: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.corner_right_up_2 {
+    background-color: white;
+    width: 12px;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.corner_left_down_1 {
+    background-color: white;
+    width: 12px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.corner_left_down_2 {
+    background-color: white;
+    width: 1px;
+    height: 12px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.corner_right_down_2 {
+    background-color: white;
+    width: 1px;
+    height: 12px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.corner_right_down_1 {
+    background-color: white;
+    width: 12px;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
 /* footer */
 #trailer_wrapper {
     width: 260px;
