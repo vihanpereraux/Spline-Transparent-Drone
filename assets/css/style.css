@@ -114,7 +114,7 @@ body {
 }
 
 #vertical_lines .line_01 {
-    left: 33%;
+    left: 30%;
 }
 
 #vertical_lines .line_02 {
@@ -122,16 +122,75 @@ body {
 }
 
 #vertical_lines .line_03 {
-    left: 67%;
+    left: 70%;
+}
+
+/* side pointer */
+:root {
+    --pointer-one-top-value: 35%;
+    --pointer-two-bottom-value: 35%;
+}
+
+.side_pointer:nth-child(1) {
+    width: 8px;
+    position: absolute;
+    right: 30px;
+    animation: sidePointerOneAnimation 4s ease-in-out infinite;
+}
+
+@keyframes sidePointerOneAnimation {
+
+    0%,
+    100% {
+        top: 15%;
+    }
+
+    50% {
+        top: var(--pointer-one-top-value);
+    }
+}
+
+.side_pointer:nth-child(2) {
+    width: 8px;
+    position: absolute;
+    right: 30px;
+    animation: sidePointerTwoAnimation 4s ease-in-out infinite;
+}
+
+@keyframes sidePointerTwoAnimation {
+
+    0%,
+    100% {
+        bottom: 15%;
+    }
+
+    50% {
+        bottom: var(--pointer-two-bottom-value);
+    }
 }
 
 /* cross pointers */
 .cross_pointer {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     opacity: .45;
+    animation: animateCrossPointer 2s ease-in-out infinite;
+    transition: all ease-in-out;
 }
+
+@keyframes animateCrossPointer {
+
+    0%,
+    100% {
+        opacity: .1;
+    }
+
+    50% {
+        opacity: .45;
+    }
+}
+
 .cross_pointer:nth-child(1) {
     left: 10%;
     top: 18%;
@@ -149,7 +208,7 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: 50%;    
+    top: 50%;
 }
 
 .plus_pointer_h {
@@ -159,7 +218,7 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: 50%;    
+    top: 50%;
 }
 
 .corner_left_up_1 {
